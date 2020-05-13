@@ -1,7 +1,7 @@
-// const Article = require('../model/index.js');
-import Article from '../model/index';
-import { responseClient } from '../utils/index';
-// const { responseClient } = require('../utils/index.js');
+const Article = require('../model/article.js');
+// import Article from '../model/index.js';
+// import { responseClient } from '../utils/index.js';
+const { responseClient } = require('../utils/index.js');
 
 exports.addArticle = (req, res) => {
   const { title, describe, createTime, content } = req.body;
