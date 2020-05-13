@@ -14,5 +14,5 @@ RUN npm i
 # 把当前目录下的所有文件拷贝到 Image 的 /usr/src/nodejs/ 目录下
 COPY . /usr/src/nodejs/
 
-EXPOSE 3000
+EXPOSE 3002
 CMD npm start
