@@ -1,12 +1,17 @@
 const mongoose = require('mongoose');
 const autoIncrement = require('mongoose-auto-increment');
 const consola = require('consola');
+const CONFIG = require('../app.config.js')
 
 mongoose.Promise = global.Promise;
 exports.mongoose = mongoose;
 
 exports.connect = () => {
-  mongoose.connect(`mongodb://127.0.0.1:27017/blogtest`);
+  mongoose.connect(CONFIG.MONGODB.uri, {
+    useCreateIndex: true,
+		useNewUrlParser: true,
+		promiseLibrary: global.Promise
+  });
 
   // 连接错误
 	mongoose.connection.on('error', error => {
