@@ -6,11 +6,11 @@ RUN mkdir -p /home/project
 # 定位到容器的工作目录
 WORKDIR /home/project
 
-COPY package.json /home/project/package.json
+COPY package*.json ./
 
-RUN npm config set registry https://registry.npm.taobao.org && npm install
+RUN npm install --registry=https://registry.npm.taobao.org
 
-COPY . /home/project
+COPY . ./
 
 EXPOSE 3002
 CMD npm start
