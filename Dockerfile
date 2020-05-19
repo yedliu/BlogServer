@@ -10,7 +10,7 @@ COPY package.json /home/project
 
 RUN npm config set registry https://registry.npm.taobao.org && npm install
 
-COPY . /home/project
+# COPY . /home/project
 
 EXPOSE 3002
 CMD npm start
